@@ -1,811 +1,259 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Profile | ESSU-AEC</title>
-
-    <style>
-        /* ========================= */
-        /* RESET & BASE STYLES      */
-        /* ========================= */
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #f4f7fb;
-            color: #1e2a3a;
-            line-height: 1.6;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
-
-        /* ========================= */
-        /* HEADER                    */
-        /* ========================= */
-
-        .page-header {
-            background: linear-gradient(135deg, #0b2a4a, #1a4a6e);
-            color: #ffffff;
-            padding: 2rem 2rem 1.5rem;
-            text-align: center;
-            border-bottom: 4px solid #e8b931;
-        }
-
-        .page-header h1 {
-            font-size: 2.4rem;
-            font-weight: 700;
-            letter-spacing: 1px;
-            margin-bottom: 0.3rem;
-        }
-
-        .page-header p {
-            font-size: 1.05rem;
-            opacity: 0.92;
-            max-width: 720px;
-            margin: 0.5rem auto 0;
-        }
-
-        .page-header p strong {
-            color: #f5d742;
-        }
-
-        /* ========================= */
-        /* MAIN BODY CONTAINER      */
-        /* ========================= */
-
-        .main-body {
-            flex: 1;
-            max-width: 1300px;
-            margin: 0 auto;
-            padding: 1.8rem 2rem 2rem;
-            width: 100%;
-            display: grid;
-            grid-template-rows: auto 1fr;
-            gap: 1.8rem;
-        }
-
-        /* ========================= */
-        /* TOP SECTION              */
-        /* ========================= */
-
-        .body-top {
-            background: #ffffff;
-            border-radius: 14px;
-            padding: 1.8rem 2rem;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-            display: flex;
-            flex-wrap: wrap;
-            align-items: flex-start;
-            gap: 2rem 3rem;
-            border-left: 6px solid #1a4a6e;
-        }
-
-        .body-top .profile-photo {
-            flex: 0 0 auto;
-            text-align: center;
-        }
-
-        .body-top .profile-photo h2 {
-            font-size: 1.1rem;
-            color: #1a4a6e;
-            margin-bottom: 0.6rem;
-            font-weight: 600;
-        }
-
-        .body-top .profile-photo img {
-            border-radius: 50%;
-            border: 4px solid #e8b931;
-            display: block;
-            width: 160px;
-            height: 160px;
-            object-fit: cover;
-            background: #eef2f7;
-        }
-
-        .body-top .personal-info {
-            flex: 1;
-            min-width: 240px;
-        }
-
-        .body-top .personal-info h2 {
-            font-size: 1.1rem;
-            color: #1a4a6e;
-            margin-bottom: 0.8rem;
-            font-weight: 600;
-            border-bottom: 2px solid #e8b931;
-            padding-bottom: 0.3rem;
-            display: inline-block;
-        }
-
-        .body-top .personal-info p {
-            margin: 0.3rem 0;
-            font-size: 0.98rem;
-        }
-
-        .body-top .personal-info p strong {
-            color: #0b2a4a;
-            min-width: 130px;
-            display: inline-block;
-        }
-
-        /* ========================= */
-        /* MIDDLE SECTION           */
-        /* (LEFT + RIGHT columns)   */
-        /* ========================= */
-
-        .body-middle {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.8rem;
-        }
-
-        /* ----- LEFT COLUMN ----- */
-
-        .body-left {
-            background: #ffffff;
-            border-radius: 14px;
-            padding: 1.8rem 2rem;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-            border-left: 6px solid #2b7a4b;
-            display: flex;
-            flex-direction: column;
-            gap: 1.6rem;
-        }
-
-        .body-left section h2 {
-            font-size: 1.1rem;
-            color: #1a4a6e;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            border-bottom: 2px solid #dde5ed;
-            padding-bottom: 0.3rem;
-        }
-
-        .body-left section p {
-            margin: 0.4rem 0;
-        }
-
-        .body-left section ul,
-        .body-left section ol {
-            padding-left: 1.6rem;
-            margin: 0.4rem 0;
-        }
-
-        .body-left section ul li,
-        .body-left section ol li {
-            margin: 0.2rem 0;
-        }
-
-        .body-left .formatting-examples p {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.3rem 1.2rem;
-            background: #f8fafc;
-            padding: 0.7rem 1rem;
-            border-radius: 8px;
-            border: 1px solid #e9edf2;
-            margin-top: 0.2rem;
-        }
-
-        /* ----- RIGHT COLUMN ----- */
-
-        .body-right {
-            background: #ffffff;
-            border-radius: 14px;
-            padding: 1.8rem 2rem;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-            border-left: 6px solid #b13e3e;
-            display: flex;
-            flex-direction: column;
-            gap: 1.6rem;
-        }
-
-        .body-right section h2 {
-            font-size: 1.1rem;
-            color: #1a4a6e;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            border-bottom: 2px solid #dde5ed;
-            padding-bottom: 0.3rem;
-        }
-
-        .body-right section p {
-            margin: 0.4rem 0;
-        }
-
-        /* ---- table ---- */
-
-        .body-right .subjects-table table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 0.92rem;
-            margin-top: 0.3rem;
-        }
-
-        .body-right .subjects-table table th {
-            background: #1a4a6e;
-            color: #fff;
-            padding: 0.5rem 0.6rem;
-            text-align: left;
-            font-weight: 600;
-        }
-
-        .body-right .subjects-table table td {
-            padding: 0.5rem 0.6rem;
-            border-bottom: 1px solid #e9edf2;
-        }
-
-        .body-right .subjects-table table tr:nth-child(even) td {
-            background: #f8fafc;
-        }
-
-        /* ---- links ---- */
-
-        .body-right .links-list a {
-            display: inline-block;
-            color: #1a4a6e;
-            text-decoration: none;
-            font-weight: 500;
-            padding: 0.15rem 0;
-            transition: color 0.2s;
-        }
-
-        .body-right .links-list a:hover {
-            color: #e8b931;
-            text-decoration: underline;
-        }
-
-        .body-right .links-list a::before {
-            content: "▸ ";
-            color: #e8b931;
-        }
-
-        /* ---- block / inline ---- */
-
-        .body-right .block-inline .demo-box {
-            background: #f8fafc;
-            border: 1px solid #e9edf2;
-            border-radius: 8px;
-            padding: 0.8rem 1rem;
-        }
-
-        .body-right .block-inline .demo-box .highlight-red {
-            color: #d32f2f;
-            font-weight: 600;
-        }
-
-        /* ---- colors ---- */
-
-        .body-right .color-demos .color-sample {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.6rem 1.5rem;
-            padding: 0.4rem 0;
-        }
-
-        .body-right .color-demos .color-sample span {
-            padding: 0.2rem 0.8rem;
-            border-radius: 4px;
-        }
-
-        .body-right .color-demos .color-sample .blue-text {
-            color: #1a56db;
-        }
-
-        .body-right .color-demos .color-sample .red-text {
-            color: #b91c1c;
-        }
-
-        .body-right .color-demos .color-sample .yellow-bg {
-            background: #fde047;
-            padding: 0.2rem 0.8rem;
-            border-radius: 4px;
-        }
-
-        /* ---- form ---- */
-
-        .body-right .contact-form form {
-            background: #f8fafc;
-            padding: 1.2rem 1.4rem;
-            border-radius: 10px;
-            border: 1px solid #e9edf2;
-        }
-
-        .body-right .contact-form form .form-group {
-            margin-bottom: 0.9rem;
-        }
-
-        .body-right .contact-form form label {
-            font-weight: 600;
-            font-size: 0.92rem;
-            color: #1e2a3a;
-        }
-
-        .body-right .contact-form form input[type="text"],
-        .body-right .contact-form form input[type="email"],
-        .body-right .contact-form form select,
-        .body-right .contact-form form textarea {
-            width: 100%;
-            padding: 0.5rem 0.7rem;
-            border: 1px solid #d0d7e2;
-            border-radius: 6px;
-            font-size: 0.95rem;
-            font-family: inherit;
-            background: #ffffff;
-            transition: border 0.2s;
-            margin-top: 0.2rem;
-        }
-
-        .body-right .contact-form form input[type="text"]:focus,
-        .body-right .contact-form form input[type="email"]:focus,
-        .body-right .contact-form form select:focus,
-        .body-right .contact-form form textarea:focus {
-            border-color: #1a4a6e;
-            outline: none;
-            box-shadow: 0 0 0 3px rgba(26, 74, 110, 0.15);
-        }
-
-        .body-right .contact-form form textarea {
-            resize: vertical;
-        }
-
-        .body-right .contact-form form .radio-group,
-        .body-right .contact-form form .checkbox-group {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.4rem 1.2rem;
-            padding-top: 0.2rem;
-        }
-
-        .body-right .contact-form form .radio-group label,
-        .body-right .contact-form form .checkbox-group label {
-            font-weight: 400;
-            font-size: 0.95rem;
-        }
-
-        .body-right .contact-form form .radio-group input,
-        .body-right .contact-form form .checkbox-group input {
-            margin-right: 0.3rem;
-        }
-
-        .body-right .contact-form form .form-actions {
-            display: flex;
-            gap: 0.8rem;
-            flex-wrap: wrap;
-            margin-top: 0.4rem;
-        }
-
-        .body-right .contact-form form .form-actions input {
-            padding: 0.5rem 1.8rem;
-            border: none;
-            border-radius: 6px;
-            font-weight: 600;
-            font-size: 0.95rem;
-            cursor: pointer;
-            transition: background 0.2s, transform 0.1s;
-        }
-
-        .body-right .contact-form form .form-actions input[type="submit"] {
-            background: #1a4a6e;
-            color: #fff;
-        }
-
-        .body-right .contact-form form .form-actions input[type="submit"]:hover {
-            background: #0b2a4a;
-        }
-
-        .body-right .contact-form form .form-actions input[type="reset"] {
-            background: #e9edf2;
-            color: #1e2a3a;
-        }
-
-        .body-right .contact-form form .form-actions input[type="reset"]:hover {
-            background: #d0d7e2;
-        }
-
-        /* ---- iframe ---- */
-
-        .body-right .location-iframe iframe {
-            width: 100%;
-            height: 260px;
-            border: 1px solid #dde5ed;
-            border-radius: 8px;
-            display: block;
-        }
-
-        /* ========================= */
-        /* FOOTER                    */
-        /* ========================= */
-
-        .page-footer {
-            background: #0b2a4a;
-            color: #cfdce8;
-            text-align: center;
-            padding: 1.2rem 2rem;
-            border-top: 4px solid #e8b931;
-            margin-top: 0.5rem;
-            font-size: 0.95rem;
-        }
-
-        .page-footer p {
-            max-width: 1300px;
-            margin: 0 auto;
-        }
-
-        .page-footer p span {
-            color: #f5d742;
-        }
-
-        /* ========================= */
-        /* RESPONSIVE               */
-        /* ========================= */
-
-        @media (max-width: 900px) {
-            .body-middle {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-
-            .body-top {
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-            }
-
-            .body-top .personal-info p strong {
-                display: inline;
-                min-width: auto;
-            }
-
-            .body-top .personal-info h2 {
-                display: block;
-                text-align: center;
-            }
-
-            .page-header h1 {
-                font-size: 1.9rem;
-            }
-
-            .main-body {
-                padding: 1.2rem;
-            }
-
-            .body-left,
-            .body-right {
-                padding: 1.4rem;
-            }
-
-            .body-right .location-iframe iframe {
-                height: 200px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .page-header {
-                padding: 1.2rem 1rem;
-            }
-
-            .page-header h1 {
-                font-size: 1.5rem;
-            }
-
-            .page-header p {
-                font-size: 0.92rem;
-            }
-
-            .main-body {
-                padding: 0.8rem;
-            }
-
-            .body-top {
-                padding: 1.2rem;
-            }
-
-            .body-top .profile-photo img {
-                width: 120px;
-                height: 120px;
-            }
-
-            .body-left,
-            .body-right {
-                padding: 1rem;
-                border-left-width: 4px;
-            }
-
-            .body-right .subjects-table table {
-                font-size: 0.8rem;
-            }
-
-            .body-right .subjects-table table th,
-            .body-right .subjects-table table td {
-                padding: 0.3rem 0.4rem;
-            }
-
-            .body-right .contact-form form {
-                padding: 0.8rem;
-            }
-
-            .body-right .contact-form form .form-actions input {
-                padding: 0.4rem 1.2rem;
-                font-size: 0.88rem;
-            }
-
-            .page-footer {
-                font-size: 0.85rem;
-                padding: 0.8rem 1rem;
-            }
-        }
-    </style>
-
+    <link rel="stylesheet" href="profile.css">
 </head>
-
 <body>
-
-    <!-- ============================================================ -->
-    <!-- HEADER                                                        -->
-    <!-- ============================================================ -->
-
-    <header class="page-header">
-        <h1>Student Profile</h1>
-        <p>
-            This page contains the profile information of a student enrolled at
-            <strong>Eastern Samar State University – Arteche Extension Campus</strong>.
-        </p>
-    </header>
-
-    <!-- ============================================================ -->
-    <!-- MAIN BODY (top, left, right)                                  -->
-    <!-- ============================================================ -->
-
-    <main class="main-body">
-
-        <!-- -------- TOP SECTION -------- -->
-
-        <section class="body-top">
-
+    <div class="profile-page">
+        <!-- HEADER -->
+        <header class="page-header" id="home">
             <div class="profile-photo">
-                <h2>Profile Picture</h2>
                 <img
-                src="./assets/images/default.png"
-                alt="Student Picture"
-                width="200"
-                height="200">
+                    src="./assets/images/my picture.jpg"
+                    alt="Student profile picture"
+                    width="180"
+                    height="180">
             </div>
 
-            <div class="personal-info">
-                <h2>Personal Information</h2>
-                <p><strong>Full Name:</strong> Pedro San Juan</p>
-                <p><strong>Student Number:</strong> 2024-0001</p>
-                <p><strong>Program:</strong> Bachelor of Science in Information Technology</p>
-                <p><strong>Year Level:</strong> Second Year</p>
-                <p><strong>Email:</strong> juandelacruz@email.com</p>
-                <p><strong>Address:</strong> Cebu City, Philippines</p>
+            <div class="header-content">
+                <p class="eyebrow">Student Profile</p>
+                <h1>Heron Placiente</h1>
+                <p class="header-description">
+                    Bachelor of Science in Information Technology student at
+                    <strong>Eastern Samar State University – Arteche Extension Campus</strong>.
+                </p>
+
+                <div class="student-details">
+                    <p><strong>Student Number:</strong> 23-04849</p>
+                    <p><strong>Year Level:</strong> Fourth Year</p>
+                    <p><strong>Email:</strong> heronplaciente@email.com</p>
+                    <p><strong>Address:</strong> Brgy. Baras, San Policarpo, Philippines</p>
+                </div>
+            </div>
+        </header>
+
+        <!-- NAVIGATION LINKS -->
+        <nav class="navigation" aria-label="Profile navigation">
+            <a href="#home">Home</a>
+            <a href="#biography">Biography</a>
+            <a href="#subjects">Current Subjects</a>
+            <a href="#contact">Contact</a>
+            <a href="#location">School Location</a>
+        </nav>
+
+        <!-- BIOGRAPHY + CURRENT SUBJECTS -->
+        <main>
+            <div class="main-columns">
+                <section class="biography-panel" id="biography">
+                    <div class="section-heading">
+                        <p class="section-number">01</p>
+                        <h2>Biography</h2>
+                    </div>
+
+                    <p>
+                        Heron Placiente is currently taking a Bachelor of Science in
+                        Information Technology. He enjoys learning web development,
+                        programming, database management, and networking.
+                    </p>
+
+                    <section class="content-group">
+                        <h3>Skills</h3>
+                        <ul class="tag-list">
+                            <li>HTML</li>
+                            <li>CSS</li>
+                            <li>JavaScript</li>
+                            <li>Database Management</li>
+                            <li>Networking</li>
+                        </ul>
+                    </section>
+
+                    <section class="content-group">
+                        <h3>Educational Background</h3>
+                        <ol class="education-list">
+                            <li>Brgy. Baras Elementary School</li>
+                            <li>Samar National Pilot Opportunity School of Agriculture (SNPOSA)</li>
+                            <li>Lagro High School</li>
+                            <li>Eastern Samar State University - Arteche Extension Campus</li>
+                        </ol>
+                    </section>
+                </section>
+
+                <section class="subjects-panel" id="subjects">
+                    <div class="section-heading">
+                        <p class="section-number">02</p>
+                        <h2>Current Subjects</h2>
+                    </div>
+
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Code</th>
+                                    <th>Subject CD</th>
+                                    <th>Description</th>
+                                    <th>Units</th>
+                                    <th>Instructor</th>
+                                    <th>Schedule and Room</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>F228</td>
+                                    <td>IT 411*</td>
+                                    <td>Capstone Project and Research 2</td>
+                                    <td>2.0</td>
+                                    <td>E. Borata</td>
+                                    <td>7:30-8:30 am TTh RM16</td>
+                                </tr>
+                                <tr>
+                                    <td>F227</td>
+                                    <td>IT 411*</td>
+                                    <td>Capstone Project and Research 2</td>
+                                    <td>1.0</td>
+                                    <td>E. Borata</td>
+                                    <td>8:30-10:30 am TTh RM16</td>
+                                </tr>
+                                <tr>
+                                    <td>F224</td>
+                                    <td>IT 413*</td>
+                                    <td>IT Elective 3</td>
+                                    <td>1.0</td>
+                                    <td>A. Morallos</td>
+                                    <td>11 am-12:30 pm TTh RM16</td>
+                                </tr>
+                                <tr>
+                                    <td>F226</td>
+                                    <td>IT 413*</td>
+                                    <td>IT Elective 3</td>
+                                    <td>2.0</td>
+                                    <td>A. Morallos</td>
+                                    <td>10-11 am TTh RM16</td>
+                                </tr>
+                                <tr>
+                                    <td>F230</td>
+                                    <td>IT 414</td>
+                                    <td>IT Elective 4 (Data Visualization)</td>
+                                    <td>2.0</td>
+                                    <td>F. Amoyan</td>
+                                    <td>7:30-8:30 am MW RM16</td>
+                                </tr>
+                                <tr>
+                                    <td>F225</td>
+                                    <td>IT 414</td>
+                                    <td>IT Elective 4 (Data Visualization)</td>
+                                    <td>1.0</td>
+                                    <td>F. Amoyan</td>
+                                    <td>8:30-10 am MW RM16</td>
+                                </tr>
+                                <tr>
+                                    <td>F229</td>
+                                    <td>IT 412*</td>
+                                    <td>Special Topics in Information Technology</td>
+                                    <td>3.0</td>
+                                    <td>E. Borata</td>
+                                    <td>2:30-5 pm MW RM16</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <section class="content-group">
+                        <h3>Useful Links</h3>
+                        <div class="useful-links">
+                            <a href="index.html">Home Page</a>
+                            <a href="about.html">About</a>
+                            <a href="academics.html">Academics</a>
+                            <a href="contact.html">Contact</a>
+                            <a href="https://www.google.com" target="_blank" rel="noopener noreferrer">Visit Google</a>
+                        </div>
+                    </section>
+                </section>
             </div>
 
-        </section>
+            <!-- CONTACT FORM -->
+            <section class="contact-section" id="contact">
+                <div class="section-heading centered-heading">
+                    <p class="section-number">03</p>
+                    <h2>Contact Form</h2>
+                </div>
 
-        <!-- -------- MIDDLE SECTION (LEFT + RIGHT) -------- -->
-
-        <div class="body-middle">
-
-            <!-- --- LEFT COLUMN --- -->
-
-            <section class="body-left">
-
-                <!-- Biography -->
-                <section>
-                    <h2>Biography</h2>
-                    <p>
-                        Juan Dela Cruz is currently taking Bachelor of Science in Information
-                        Technology. He enjoys learning web development, programming,
-                        database management, and networking.
-                    </p>
-                </section>
-
-                <!-- Text Formatting -->
-                <section class="formatting-examples">
-                    <h2>Text Formatting Examples</h2>
-                    <p>
-                        <b>Bold</b>
-                        <strong>Strong Importance</strong>
-                        <i>Italic</i>
-                        <em>Emphasized Text</em>
-                        <u>Underlined Text</u>
-                        <mark>Highlighted Text</mark>
-                        <small>Small Text</small>
-                        H<sub>2</sub>O
-                        X<sup>2</sup>
-                        <del>Deleted Text</del>
-                        <ins>Inserted Text</ins>
-                    </p>
-                </section>
-
-                <!-- Skills -->
-                <section>
-                    <h2>Skills</h2>
-                    <ul>
-                        <li>HTML</li>
-                        <li>CSS</li>
-                        <li>JavaScript</li>
-                        <li>Microsoft Office</li>
-                        <li>Problem Solving</li>
-                    </ul>
-                </section>
-
-                <!-- Educational Background -->
-                <section>
-                    <h2>Educational Background</h2>
-                    <ol>
-                        <li>Elementary</li>
-                        <li>Junior High School</li>
-                        <li>Senior High School</li>
-                        <li>College</li>
-                    </ol>
-                </section>
-
-            </section>
-
-            <!-- --- RIGHT COLUMN --- -->
-
-            <section class="body-right">
-
-                <!-- Useful Links -->
-                <section class="links-list">
-                    <h2>Useful Links</h2>
-                    <p>
-                        <a href="index.html">Home</a><br>
-                        <a href="about.html">About</a><br>
-                        <a href="academics.html">Academics</a><br>
-                        <a href="contact.html">Contact</a><br>
-                        <a href="https://www.google.com" target="_blank">Visit Google</a>
-                    </p>
-                </section>
-
-                <!-- Current Subjects (table) -->
-                <section class="subjects-table">
-                    <h2>Current Subjects</h2>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Course Code</th>
-                                <th>Description</th>
-                                <th>Instructor</th>
-                                <th>Schedule</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>IT413 / Elective 3*</td>
-                                <td>Web Systems and Technologies</td>
-                                <td>Mr. Silla</td>
-                                <td>MW 7:30 AM</td>
-                            </tr>
-                            <tr>
-                                <td>Comp 212</td>
-                                <td>Object Oriented Programming</td>
-                                <td>Mr. Silla</td>
-                                <td>TTH 10:00 AM</td>
-                            </tr>
-                            <tr>
-                                <td>IT 314 / Elective 1*</td>
-                                <td>Advanced Database Systems</td>
-                                <td>Mr. Silla</td>
-                                <td>MWF 2:00 PM</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </section>
-
-                <!-- Block and Inline Elements -->
-                <section class="block-inline">
-                    <h2>Block and Inline Elements</h2>
-                    <div class="demo-box">
-                        <p>
-                            This paragraph is inside a <strong>DIV</strong> element.
-                            The word <span class="highlight-red">RED</span> is displayed
-                            using a SPAN element.
-                        </p>
-                    </div>
-                </section>
-
-                <!-- HTML Color Examples -->
-                <section class="color-demos">
-                    <h2>HTML Color Examples</h2>
-                    <div class="color-sample">
-                        <span class="blue-text">This text is blue.</span>
-                        <span class="red-text">This text is red.</span>
-                        <span class="yellow-bg">Yellow Background</span>
-                    </div>
-                </section>
-
-                <!-- Contact Form -->
-                <section class="contact-form">
-                    <h2>Contact the Student</h2>
-                    <form>
-
+                <form action="#" method="post">
+                    <div class="form-grid">
                         <div class="form-group">
-                            <label for="fullname">Full Name:</label>
-                            <input type="text" id="fullname" name="fullname">
+                            <label for="fullname">Full Name</label>
+                            <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required>
                         </div>
 
                         <div class="form-group">
-                            <label for="email">Email Address:</label>
-                            <input type="email" id="email" name="email">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" placeholder="name@example.com" required>
                         </div>
 
                         <div class="form-group">
-                            <label for="course">Course:</label>
+                            <label for="course">Course</label>
                             <select id="course" name="course">
-                                <option>BSIT</option>
-                                <option>BSEd</option>
-                                <option>BEEd</option>
-                                <option>BSHM</option>
+                                <option value="BSIT">BSIT</option>
+                                <option value="BSEd">BSEd</option>
+                                <option value="BEEd">BEEd</option>
+                                <option value="BSHM">BSHM</option>
                             </select>
                         </div>
 
-                        <div class="form-group">
-                            <label>Gender</label>
-                            <div class="radio-group">
-                                <label><input type="radio" name="gender" value="male"> Male</label>
-                                <label><input type="radio" name="gender" value="female"> Female</label>
-                            </div>
-                        </div>
+                        <fieldset class="form-group option-group">
+                            <legend>Gender</legend>
+                            <label><input type="radio" name="gender" value="male"> Male</label>
+                            <label><input type="radio" name="gender" value="female"> Female</label>
+                        </fieldset>
 
-                        <div class="form-group">
-                            <label>Interests</label>
-                            <div class="checkbox-group">
-                                <label><input type="checkbox" name="interests" value="programming"> Programming</label>
-                                <label><input type="checkbox" name="interests" value="networking"> Networking</label>
-                                <label><input type="checkbox" name="interests" value="multimedia"> Multimedia</label>
-                            </div>
-                        </div>
+                        <fieldset class="form-group option-group full-width">
+                            <legend>Interests</legend>
+                            <label><input type="checkbox" name="interests" value="programming"> Programming</label>
+                            <label><input type="checkbox" name="interests" value="networking"> Networking</label>
+                            <label><input type="checkbox" name="interests" value="multimedia"> Multimedia</label>
+                        </fieldset>
 
-                        <div class="form-group">
+                        <div class="form-group full-width">
                             <label for="message">Message</label>
-                            <textarea id="message" name="message" rows="5"></textarea>
+                            <textarea id="message" name="message" rows="6" placeholder="Write your message here..."></textarea>
                         </div>
+                    </div>
 
-                        <div class="form-actions">
-                            <input type="submit" value="Submit">
-                            <input type="reset" value="Clear">
-                        </div>
-
-                    </form>
-                </section>
-
-                <!-- School Location (iframe) -->
-                <section class="location-iframe">
-                    <h2>School Location</h2>
-                    <iframe
-                    src="https://www.google.com"
-                    width="600"
-                    height="300"
-                    title="School Location Map">
-                </iframe>
+                    <div class="form-actions">
+                        <input type="submit" value="Submit Message">
+                        <input type="reset" value="Clear Form">
+                    </div>
+                </form>
             </section>
 
-        </section>
+            <!-- SCHOOL LOCATION -->
+            <section class="location-section" id="location">
+                <div class="section-heading centered-heading">
+                    <p class="section-number">04</p>
+                    <h2>School Location</h2>
+                </div>
 
+                <p class="location-description">
+                    Eastern Samar State University – Arteche Extension Campus
+                </p>
+
+                <iframe
+                    src="https://www.google.com/maps?q=Eastern+Samar+State+University+Arteche+Campus&output=embed"
+                    width="600"
+                    height="380"
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="Eastern Samar State University Arteche Campus location map">
+                </iframe>
+            </section>
+        </main>
+
+        <!-- FOOTER -->
+        <footer class="page-footer">
+            <p>&copy; 2026 <span>ESSU – Arteche</span>. Student Profile Activity.</p>
+        </footer>
     </div>
-
-</main>
-
-<!-- ============================================================ -->
-<!-- FOOTER                                                        -->
-<!-- ============================================================ -->
-
-<footer class="page-footer">
-    <p>&copy; 2026 <span>ESSU – Arteche</span></p>
-</footer>
-
 </body>
-
 </html>

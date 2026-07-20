@@ -1,0 +1,568 @@
+/* =========================
+   RESET AND BASE STYLES
+   ========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --navy: #0b2545;
+    --blue: #134b70;
+    --sky: #d9edf7;
+    --gold: #f4c95d;
+    --cream: #fffdf7;
+    --white: #ffffff;
+    --text: #1f2937;
+    --muted: #64748b;
+    --line: #153b57;
+    --soft-line: #d7e1e8;
+    --shadow: 0 18px 45px rgba(11, 37, 69, 0.14);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    padding: 32px 18px;
+    background:
+        radial-gradient(circle at top left, rgba(244, 201, 93, 0.22), transparent 32%),
+        linear-gradient(135deg, #edf5f9, #f8fbfd 55%, #e7f0f5);
+    color: var(--text);
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.65;
+}
+
+.profile-page {
+    width: min(1120px, 100%);
+    margin: 0 auto;
+    overflow: hidden;
+    background: var(--white);
+    border: 2px solid var(--line);
+    border-radius: 18px;
+    box-shadow: var(--shadow);
+}
+
+/* =========================
+   HEADER
+   ========================= */
+
+.page-header {
+    min-height: 250px;
+    display: flex;
+    align-items: center;
+    gap: 34px;
+    padding: 42px 52px;
+    color: var(--white);
+    background:
+        linear-gradient(120deg, rgba(11, 37, 69, 0.96), rgba(19, 75, 112, 0.9)),
+        repeating-linear-gradient(45deg, transparent 0 18px, rgba(255, 255, 255, 0.04) 18px 36px);
+    border-bottom: 2px solid var(--line);
+}
+
+.profile-photo {
+    flex: 0 0 auto;
+}
+
+.profile-photo img {
+    display: block;
+    width: 170px;
+    height: 170px;
+    object-fit: cover;
+    border: 5px solid var(--gold);
+    border-radius: 50%;
+    background: var(--white);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
+}
+
+.header-content {
+    flex: 1;
+}
+
+.eyebrow {
+    margin-bottom: 4px;
+    color: var(--gold);
+    font-size: 0.82rem;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+}
+
+.page-header h1 {
+    margin-bottom: 8px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(2.2rem, 5vw, 4rem);
+    line-height: 1.05;
+}
+
+.header-description {
+    max-width: 720px;
+    color: #e6f0f5;
+    font-size: 1.05rem;
+}
+
+.header-description strong {
+    color: var(--gold);
+}
+
+.student-details {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(220px, 1fr));
+    gap: 4px 24px;
+    margin-top: 18px;
+    color: #f5f9fb;
+    font-size: 0.93rem;
+}
+
+.student-details strong {
+    color: var(--gold);
+}
+
+/* =========================
+   NAVIGATION LINKS
+   ========================= */
+
+.navigation {
+    min-height: 76px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 14px 24px;
+    background: var(--cream);
+    border-bottom: 2px solid var(--line);
+}
+
+.navigation a {
+    padding: 10px 16px;
+    color: var(--navy);
+    border-radius: 999px;
+    font-size: 0.92rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+    transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
+}
+
+.navigation a:hover,
+.navigation a:focus-visible {
+    color: var(--white);
+    background: var(--blue);
+    outline: none;
+    transform: translateY(-2px);
+}
+
+/* =========================
+   SHARED SECTION STYLES
+   ========================= */
+
+.section-heading {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 22px;
+}
+
+.centered-heading {
+    justify-content: center;
+}
+
+.section-number {
+    display: grid;
+    place-items: center;
+    width: 38px;
+    height: 38px;
+    flex: 0 0 auto;
+    color: var(--navy);
+    background: var(--gold);
+    border-radius: 50%;
+    font-size: 0.78rem;
+    font-weight: 900;
+}
+
+.section-heading h2 {
+    color: var(--navy);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(1.55rem, 3vw, 2.15rem);
+    line-height: 1.1;
+}
+
+.content-group {
+    margin-top: 26px;
+}
+
+.content-group h3 {
+    margin-bottom: 10px;
+    color: var(--blue);
+    font-size: 1.04rem;
+}
+
+/* =========================
+   BIOGRAPHY + SUBJECTS GRID
+   ========================= */
+
+.main-columns {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    border-bottom: 2px solid var(--line);
+}
+
+.biography-panel,
+.subjects-panel {
+    min-width: 0;
+    min-height: 560px;
+    padding: 42px;
+}
+
+.biography-panel {
+    background: linear-gradient(180deg, #ffffff, #f8fbfc);
+    border-right: 2px solid var(--line);
+}
+
+.subjects-panel {
+    background: linear-gradient(180deg, #fffdf7, #ffffff);
+}
+
+.tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+    list-style: none;
+}
+
+.tag-list li {
+    padding: 7px 12px;
+    color: var(--navy);
+    background: var(--sky);
+    border: 1px solid #b8d8e8;
+    border-radius: 999px;
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.education-list {
+    padding-left: 22px;
+}
+
+.education-list li {
+    margin: 6px 0;
+    padding-left: 5px;
+}
+
+
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    border: 1px solid var(--soft-line);
+    border-radius: 12px;
+}
+
+table {
+    width: 100%;
+    min-width: 620px;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+}
+
+th,
+td {
+    padding: 13px 12px;
+    text-align: left;
+    vertical-align: top;
+}
+
+th {
+    color: var(--white);
+    background: var(--navy);
+    font-size: 0.8rem;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+}
+
+td {
+    border-bottom: 1px solid var(--soft-line);
+}
+
+tbody tr:nth-child(even) {
+    background: #f3f8fb;
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.useful-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+}
+
+.useful-links a {
+    padding: 7px 11px;
+    color: var(--blue);
+    background: var(--white);
+    border: 1px solid #bdd1dc;
+    border-radius: 8px;
+    font-size: 0.88rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.useful-links a:hover,
+.useful-links a:focus-visible {
+    color: var(--white);
+    background: var(--blue);
+    outline: none;
+}
+
+
+
+
+/* =========================
+   CONTACT FORM
+   ========================= */
+
+.contact-section {
+    min-height: 430px;
+    padding: 46px clamp(24px, 6vw, 76px);
+    background: #f4f9fc;
+    border-bottom: 2px solid var(--line);
+}
+
+.contact-section form {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 28px;
+    background: var(--white);
+    border: 1px solid var(--soft-line);
+    border-radius: 16px;
+    box-shadow: 0 10px 28px rgba(11, 37, 69, 0.08);
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.form-group {
+    min-width: 0;
+}
+
+.form-group label,
+.form-group legend {
+    display: block;
+    margin-bottom: 7px;
+    color: var(--navy);
+    font-size: 0.9rem;
+    font-weight: 800;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 13px;
+    color: var(--text);
+    background: #fbfdfe;
+    border: 1px solid #b9c9d3;
+    border-radius: 9px;
+    font: inherit;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--blue);
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(19, 75, 112, 0.12);
+}
+
+.option-group {
+    padding: 0;
+    border: 0;
+}
+
+.option-group label {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin: 5px 16px 5px 0;
+    color: var(--text);
+    font-weight: 500;
+}
+
+.full-width {
+    grid-column: 1 / -1;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 24px;
+}
+
+.form-actions input {
+    min-width: 150px;
+    padding: 12px 20px;
+    border: 0;
+    border-radius: 9px;
+    font: inherit;
+    font-weight: 800;
+    cursor: pointer;
+    transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.form-actions input:hover {
+    filter: brightness(1.06);
+    transform: translateY(-2px);
+}
+
+.form-actions input[type="submit"] {
+    color: var(--white);
+    background: var(--blue);
+}
+
+.form-actions input[type="reset"] {
+    color: var(--navy);
+    background: var(--gold);
+}
+
+/* =========================
+   SCHOOL LOCATION
+   ========================= */
+
+.location-section {
+    min-height: 430px;
+    padding: 46px clamp(24px, 6vw, 76px);
+    text-align: center;
+    background: var(--cream);
+    border-bottom: 2px solid var(--line);
+}
+
+.location-description {
+    margin: -8px 0 20px;
+    color: var(--muted);
+}
+
+.location-section iframe {
+    display: block;
+    width: 100%;
+    max-width: 940px;
+    height: 380px;
+    margin: 0 auto;
+    border: 1px solid #b8cbd6;
+    border-radius: 16px;
+    box-shadow: 0 10px 28px rgba(11, 37, 69, 0.1);
+}
+
+/* =========================
+   FOOTER
+   ========================= */
+
+.page-footer {
+    min-height: 82px;
+    display: grid;
+    place-items: center;
+    padding: 22px;
+    color: #dce8ef;
+    text-align: center;
+    background: var(--navy);
+}
+
+.page-footer span {
+    color: var(--gold);
+    font-weight: 800;
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+   ========================= */
+
+@media (max-width: 850px) {
+    body {
+        padding: 18px 10px;
+    }
+
+    .page-header {
+        flex-direction: column;
+        padding: 36px 26px;
+        text-align: center;
+    }
+
+    .student-details {
+        grid-template-columns: 1fr;
+    }
+
+    .main-columns {
+        grid-template-columns: 1fr;
+    }
+
+    .biography-panel {
+        border-right: 0;
+        border-bottom: 2px solid var(--line);
+    }
+
+    .biography-panel,
+    .subjects-panel {
+        min-height: auto;
+        padding: 34px 26px;
+    }
+}
+
+@media (max-width: 620px) {
+    .profile-page {
+        border-radius: 12px;
+    }
+
+    .profile-photo img {
+        width: 140px;
+        height: 140px;
+    }
+
+    .navigation {
+        align-items: stretch;
+        flex-direction: column;
+        padding: 12px;
+    }
+
+    .navigation a {
+        text-align: center;
+        background: #f3f7f9;
+        border-radius: 8px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .full-width {
+        grid-column: auto;
+    }
+
+    .contact-section,
+    .location-section {
+        padding: 34px 18px;
+    }
+
+    .contact-section form {
+        padding: 20px 16px;
+    }
+
+    .location-section iframe {
+        height: 300px;
+    }
+}
