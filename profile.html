@@ -1,410 +1,259 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Profile | ESSU-AEC</title>
+    <link rel="stylesheet" href="profile.css">
 </head>
-
 <body>
+    <div class="profile-page">
+        <!-- HEADER -->
+        <header class="page-header" id="home">
+            <div class="profile-photo">
+                <img
+                    src="./assets/images/my picture.jpg"
+                    alt="Student profile picture"
+                    width="180"
+                    height="180">
+            </div>
 
-    <!-- ========================= -->
-    <!-- HEADER -->
-    <!-- ========================= -->
+            <div class="header-content">
+                <p class="eyebrow">Student Profile</p>
+                <h1>Heron Placiente</h1>
+                <p class="header-description">
+                    Bachelor of Science in Information Technology student at
+                    <strong>Eastern Samar State University – Arteche Extension Campus</strong>.
+                </p>
 
-    <h1>Student Profile</h1>
+                <div class="student-details">
+                    <p><strong>Student Number:</strong> 23-04849</p>
+                    <p><strong>Year Level:</strong> Fourth Year</p>
+                    <p><strong>Email:</strong> heronplaciente@email.com</p>
+                    <p><strong>Address:</strong> Brgy. Baras, San Policarpo, Philippines</p>
+                </div>
+            </div>
+        </header>
 
-    <p>
-        This page contains the profile information of a student enrolled at
-        <strong>Eastern Samar State University - Arteche Extension Campus</strong>.
-    </p>
+        <!-- NAVIGATION LINKS -->
+        <nav class="navigation" aria-label="Profile navigation">
+            <a href="#home">Home</a>
+            <a href="#biography">Biography</a>
+            <a href="#subjects">Current Subjects</a>
+            <a href="#contact">Contact</a>
+            <a href="#location">School Location</a>
+        </nav>
 
-    <hr>
+        <!-- BIOGRAPHY + CURRENT SUBJECTS -->
+        <main>
+            <div class="main-columns">
+                <section class="biography-panel" id="biography">
+                    <div class="section-heading">
+                        <p class="section-number">01</p>
+                        <h2>Biography</h2>
+                    </div>
 
-    <!-- ========================= -->
-    <!-- PROFILE PHOTO -->
-    <!-- ========================= -->
+                    <p>
+                        Heron Placiente is currently taking a Bachelor of Science in
+                        Information Technology. He enjoys learning web development,
+                        programming, database management, and networking.
+                    </p>
 
-    <h2>Profile Picture</h2>
+                    <section class="content-group">
+                        <h3>Skills</h3>
+                        <ul class="tag-list">
+                            <li>HTML</li>
+                            <li>CSS</li>
+                            <li>JavaScript</li>
+                            <li>Database Management</li>
+                            <li>Networking</li>
+                        </ul>
+                    </section>
 
-    <img src="./assets/images/My picture.jpeg"
-         alt="Student Picture"
-         width="200"
-         height="200">
+                    <section class="content-group">
+                        <h3>Educational Background</h3>
+                        <ol class="education-list">
+                            <li>Brgy. Baras Elementary School</li>
+                            <li>Samar National Pilot Opportunity School of Agriculture (SNPOSA)</li>
+                            <li>Lagro High School</li>
+                            <li>Eastern Samar State University - Arteche Extension Campus</li>
+                        </ol>
+                    </section>
+                </section>
 
-    <hr>
+                <section class="subjects-panel" id="subjects">
+                    <div class="section-heading">
+                        <p class="section-number">02</p>
+                        <h2>Current Subjects</h2>
+                    </div>
 
-    <!-- ========================= -->
-    <!-- PERSONAL INFORMATION -->
-    <!-- ========================= -->
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Code</th>
+                                    <th>Subject CD</th>
+                                    <th>Description</th>
+                                    <th>Units</th>
+                                    <th>Instructor</th>
+                                    <th>Schedule and Room</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>F228</td>
+                                    <td>IT 411*</td>
+                                    <td>Capstone Project and Research 2</td>
+                                    <td>2.0</td>
+                                    <td>E. Borata</td>
+                                    <td>7:30-8:30 am TTh RM16</td>
+                                </tr>
+                                <tr>
+                                    <td>F227</td>
+                                    <td>IT 411*</td>
+                                    <td>Capstone Project and Research 2</td>
+                                    <td>1.0</td>
+                                    <td>E. Borata</td>
+                                    <td>8:30-10:30 am TTh RM16</td>
+                                </tr>
+                                <tr>
+                                    <td>F224</td>
+                                    <td>IT 413*</td>
+                                    <td>IT Elective 3</td>
+                                    <td>1.0</td>
+                                    <td>A. Morallos</td>
+                                    <td>11 am-12:30 pm TTh RM16</td>
+                                </tr>
+                                <tr>
+                                    <td>F226</td>
+                                    <td>IT 413*</td>
+                                    <td>IT Elective 3</td>
+                                    <td>2.0</td>
+                                    <td>A. Morallos</td>
+                                    <td>10-11 am TTh RM16</td>
+                                </tr>
+                                <tr>
+                                    <td>F230</td>
+                                    <td>IT 414</td>
+                                    <td>IT Elective 4 (Data Visualization)</td>
+                                    <td>2.0</td>
+                                    <td>F. Amoyan</td>
+                                    <td>7:30-8:30 am MW RM16</td>
+                                </tr>
+                                <tr>
+                                    <td>F225</td>
+                                    <td>IT 414</td>
+                                    <td>IT Elective 4 (Data Visualization)</td>
+                                    <td>1.0</td>
+                                    <td>F. Amoyan</td>
+                                    <td>8:30-10 am MW RM16</td>
+                                </tr>
+                                <tr>
+                                    <td>F229</td>
+                                    <td>IT 412*</td>
+                                    <td>Special Topics in Information Technology</td>
+                                    <td>3.0</td>
+                                    <td>E. Borata</td>
+                                    <td>2:30-5 pm MW RM16</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
 
-    <h2>Personal Information</h2>
+                    <section class="content-group">
+                        <h3>Useful Links</h3>
+                        <div class="useful-links">
+                            <a href="index.html">Home Page</a>
+                            <a href="about.html">About</a>
+                            <a href="academics.html">Academics</a>
+                            <a href="contact.html">Contact</a>
+                            <a href="https://www.google.com" target="_blank" rel="noopener noreferrer">Visit Google</a>
+                        </div>
+                    </section>
+                </section>
+            </div>
 
-    <p><strong>Full Name:</strong> Heron D. Placiente</p>
+            <!-- CONTACT FORM -->
+            <section class="contact-section" id="contact">
+                <div class="section-heading centered-heading">
+                    <p class="section-number">03</p>
+                    <h2>Contact Form</h2>
+                </div>
 
-    <p><strong>Student Number:</strong> 23-04849</p>
+                <form action="#" method="post">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="fullname">Full Name</label>
+                            <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required>
+                        </div>
 
-    <p><strong>Program:</strong> Bachelor of Science in Information Technology</p>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" placeholder="name@example.com" required>
+                        </div>
 
-    <p><strong>Year Level:</strong> Fourth Year</p>
+                        <div class="form-group">
+                            <label for="course">Course</label>
+                            <select id="course" name="course">
+                                <option value="BSIT">BSIT</option>
+                                <option value="BSEd">BSEd</option>
+                                <option value="BEEd">BEEd</option>
+                                <option value="BSHM">BSHM</option>
+                            </select>
+                        </div>
 
-    <p><strong>Email:</strong> heronplaciente2004@email.com</p>
+                        <fieldset class="form-group option-group">
+                            <legend>Gender</legend>
+                            <label><input type="radio" name="gender" value="male"> Male</label>
+                            <label><input type="radio" name="gender" value="female"> Female</label>
+                        </fieldset>
 
-    <p><strong>Address:</strong> Brgy. Baras, San Policarpo, Eastern Samar, Philippines</p>
+                        <fieldset class="form-group option-group full-width">
+                            <legend>Interests</legend>
+                            <label><input type="checkbox" name="interests" value="programming"> Programming</label>
+                            <label><input type="checkbox" name="interests" value="networking"> Networking</label>
+                            <label><input type="checkbox" name="interests" value="multimedia"> Multimedia</label>
+                        </fieldset>
 
-    <hr>
+                        <div class="form-group full-width">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="6" placeholder="Write your message here..."></textarea>
+                        </div>
+                    </div>
 
-    <!-- ========================= -->
-    <!-- TEXT FORMATTING -->
-    <!-- ========================= -->
+                    <div class="form-actions">
+                        <input type="submit" value="Submit Message">
+                        <input type="reset" value="Clear Form">
+                    </div>
+                </form>
+            </section>
 
-    <h2>Text Formatting Examples</h2>
+            <!-- SCHOOL LOCATION -->
+            <section class="location-section" id="location">
+                <div class="section-heading centered-heading">
+                    <p class="section-number">04</p>
+                    <h2>School Location</h2>
+                </div>
 
-    <p>
-        <b>Bold</b><br>
-        <strong>Strong Importance</strong><br>
-        <i>Italic</i><br>
-        <em>Emphasized Text</em><br>
-        <u>Underlined Text</u><br>
-        <mark>Highlighted Text</mark><br>
-        <small>Small Text</small><br>
-        H<sub>2</sub>O<br>
-        X<sup>2</sup><br>
-        <del>Deleted Text</del><br>
-        <ins>Inserted Text</ins>
-    </p>
+                <p class="location-description">
+                    Eastern Samar State University – Arteche Extension Campus
+                </p>
 
-    <hr>
+                <iframe
+                    src="https://www.google.com/maps?q=Eastern+Samar+State+University+Arteche+Campus&output=embed"
+                    width="600"
+                    height="380"
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="Eastern Samar State University Arteche Campus location map">
+                </iframe>
+            </section>
+        </main>
 
-    <!-- ========================= -->
-    <!-- BIOGRAPHY -->
-    <!-- ========================= -->
-
-    <h2>Biography</h2>
-
-    <p>
-        Heron Placiente is a Bachelor of Science in Information Technology student at ESSU-Arteche. 
-        He specializes in core computing disciplines, including web development, programming, database management, and networking. 
-        Currently, his academic focus includes advanced capstone research, data visualization technologies, and specialized topics in information systems.
-    </p>
-
-    <hr>
-
-    <!-- ========================= -->
-    <!-- LISTS -->
-    <!-- ========================= -->
-
-    <h2>Skills</h2>
-
-    <ul>
-        <li>HTML</li>
-        <li>CSS</li>
-        <li>JavaScript</li>
-        <li>QGIS</li>
-        <li>Programming</li>
-    </ul>
-
-    <h2>Educational Background</h2>
-
-    <ol>
-        <li>Baras Elementary (2014-2017)</li>
-        <li>Samar National Pilot Opportunity School of Agriculture (SNPOSA) (2017-2022)</li>
-        <li>Lagro High School (2022-2023)</li>
-        <li>ESSU-ARTECHE (2023-present)</li>
-    </ol>
-
-    <hr>
-
-    <!-- ========================= -->
-    <!-- LINKS -->
-    <!-- ========================= -->
-
-    <h2>Useful Links</h2>
-
-    <p>
-        <a href="index.html">Home</a><br>
-
-        <a href="about.html">About</a><br>
-
-        <a href="academics.html">Academics</a><br>
-
-        <a href="contact.html">Contact</a><br>
-
-        <a href="https://www.google.com" target="_blank">
-            Visit Google
-        </a>
-    </p>
-
-    <hr>
-
-    <!-- ========================= -->
-    <!-- TABLE -->
-    <!-- ========================= -->
-
-    <h2>Current Subjects</h2>
-
-    <table border="1" cellpadding="10">
-
-        <thead>
-            <tr>
-            <th>Course Code</th>
-            <th>Description</th>
-            <th>Units</th>
-            <th>Instructor</th>
-            <th>Schedule</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>IT 411*</td>
-                <td>Capstone Project and Research 2</td>
-                <td>2.0</td>
-                <td>E. Borata</td>
-                <td>7:30-8:30 am TTh RM16</td>
-            </tr>
-            <tr>
-                <td>IT 411*</td>
-                <td>Capstone Project and Research 2</td>
-                <td>1.0</td>
-                <td>E. Borata</td>
-                <td>8:30-10:30 am TTh RM16</td>
-            </tr>
-            <tr>
-                <td>IT 413*</td>
-                <td>IT Elective 3</td>
-                <td>1.0</td>
-                <td>A. Morallos</td>
-                <td>11 am-12:30 pm TTh RM16</td>
-            </tr>
-            <tr>
-                <td>IT 413*</td>
-                <td>IT Elective 3</td>
-                <td>2.0</td>
-                <td>A. Morallos</td>
-                <td>10-11 am TTh RM16</td>
-            </tr>
-            <tr>
-                <td>IT_414</td>
-                <td>IT Elective 4 (Data Visualization)</td>
-                <td>2.0</td>
-                <td>F. Amoyan</td>
-                <td>7:30-8:30 am MW RM16</td>
-            </tr>
-            <tr>
-                <td>IT_414</td>
-                <td>IT Elective 4 (Data Visualization)</td>
-                <td>1.0</td>
-                <td>F. Amoyan</td>
-                <td>8:30-10 am MW RM16</td>
-            </tr>
-            <tr>
-                <td>IT 412*</td>
-                <td>Special Topics in Information Technology</td>
-                <td>3.0</td>
-                <td>E. Borata</td>
-                <td>3:30-5 pm MW RM16</td>
-            </tr>
-        </tbody>
-
-    </table>
-
-    <hr>
-
-    <!-- ========================= -->
-    <!-- BLOCK AND INLINE ELEMENTS -->
-    <!-- ========================= -->
-
-    <h2>Block and Inline Elements</h2>
-
-    <div>
-
-        <p>
-            This paragraph is inside a
-            <span>DIV</span> element.
-
-            The word
-            <span style="color:red;">
-                RED
-            </span>
-
-            is displayed using a SPAN element.
-        </p>
-
+        <!-- FOOTER -->
+        <footer class="page-footer">
+            <p>&copy; 2026 <span>ESSU – Arteche</span>. Student Profile Activity.</p>
+        </footer>
     </div>
-
-    <hr>
-
-    <!-- ========================= -->
-    <!-- COLORS -->
-    <!-- ========================= -->
-
-    <h2>HTML Color Examples</h2>
-
-    <p style="color:blue;">
-        This text is blue.
-    </p>
-
-    <p style="color:red;">
-        This text is red.
-    </p>
-
-    <p style="background-color:yellow;">
-        Yellow Background
-    </p>
-
-    <hr>
-
-    <!-- ========================= -->
-    <!-- FORM -->
-    <!-- ========================= -->
-
-    <h2>Contact the Student</h2>
-
-    <form>
-
-        <p>
-
-            <label for="fullname">
-                Full Name:
-            </label>
-
-            <br>
-
-            <input
-                type="text"
-                id="fullname"
-                name="fullname">
-
-        </p>
-
-        <p>
-
-            <label for="email">
-                Email Address:
-            </label>
-
-            <br>
-
-            <input
-                type="email"
-                id="email"
-                name="email">
-
-        </p>
-
-        <p>
-
-            <label for="course">
-                Course:
-            </label>
-
-            <br>
-
-            <select id="course">
-
-                <option>BSIT</option>
-                <option>BSEd</option>
-                <option>BEEd</option>
-                <option>BSHM</option>
-
-            </select>
-
-        </p>
-
-        <p>
-
-            Gender
-
-            <br>
-
-            <input
-                type="radio"
-                name="gender">
-
-            Male
-
-            <br>
-
-            <input
-                type="radio"
-                name="gender">
-
-            Female
-
-        </p>
-
-        <p>
-
-            Interests
-
-            <br>
-
-            <input type="checkbox">
-
-            Programming
-
-            <br>
-
-            <input type="checkbox">
-
-            Networking
-
-            <br>
-
-            <input type="checkbox">
-
-            Multimedia
-
-        </p>
-
-        <p>
-
-            <label for="message">
-                Message
-            </label>
-
-            <br>
-
-            <textarea
-                id="message"
-                rows="5"
-                cols="40"></textarea>
-
-        </p>
-
-        <input type="submit" value="Submit">
-
-        <input type="reset" value="Clear">
-
-    </form>
-
-    <hr>
-
-    <!-- ========================= -->
-    <!-- IFRAME -->
-    <!-- ========================= -->
-
-    <h2>School Location</h2>
-
-    <iframe
-        src="https://www.google.com"
-        width="600"
-        height="300">
-    </iframe>
-
-    <hr>
-
-    <!-- ========================= -->
-    <!-- FOOTER -->
-    <!-- ========================= -->
-
-    <p>
-
-        &copy; 2026 ESSU - Arteche
-
-    </p>
-
 </body>
-
 </html>
